@@ -1,0 +1,359 @@
+/* ========== 全局基础 ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========== 头部 ========== */
+header {
+  background: linear-gradient(135deg, #4a90e2, #67b26f);
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* ========== 主容器 ========== */
+main {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* ========== 工具栏卡片风格 ========== */
+.toolbar {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+
+/* --- 搜索框 --- */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  flex: 1 1 300px;
+  padding: 12px 18px;
+  border: 2px solid #e0e7f0;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
+}
+
+.search-box button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.search-box button:hover {
+  background-color: #3a7bd5;
+}
+
+#clearSearchBtn {
+  background-color: #e0e7f0;
+  color: #555;
+}
+
+#clearSearchBtn:hover {
+  background-color: #cfd8e3;
+}
+
+/* --- 列选择器 --- */
+.column-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  background-color: #f9fbfd;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.column-selector span {
+  font-weight: 600;
+  color: #555;
+  margin-right: 5px;
+}
+
+.column-selector label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.column-selector input[type="checkbox"] {
+  accent-color: #4a90e2;
+  width: 16px;
+  height: 16px;
+}
+
+/* --- 排序按钮 --- */
+.sort-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-box span {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.sort-btn {
+  padding: 8px 20px;
+  border: 2px solid #d0dbe8;
+  border-radius: 25px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+  color: #333;
+}
+
+.sort-btn:hover, .sort-btn.active {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+/* --- 上传区域 --- */
+.upload-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.upload-area button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#uploadBtn {
+  background-color: #67b26f;
+  color: white;
+}
+
+#uploadBtn:hover {
+  background-color: #5a9f63;
+}
+
+#checkDuplicateBtn {
+  background-color: #f39c12;
+  color: white;
+}
+
+#checkDuplicateBtn:hover {
+  background-color: #d68910;
+}
+
+#batchDeleteBtn {
+  background-color: #e74c3c !important;
+  color: white;
+}
+
+#batchDeleteBtn:hover {
+  background-color: #c0392b !important;
+}
+
+/* ========== 表格（宽度优化） ========== */
+.table-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+thead {
+  background-color: #4a90e2;
+  color: white;
+}
+
+th, td {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eef2f6;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 150px;
+  min-width: 60px;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: white;
+  white-space: normal;
+}
+
+tbody tr:hover {
+  background-color: #f8fbff;
+}
+
+/* 复选框列 */
+th.check-col, td.check-col {
+  min-width: 36px;
+  max-width: 36px;
+  width: 36px;
+  text-align: center;
+  padding: 8px 4px;
+}
+
+/* 重复行高亮 */
+tr.duplicate {
+  background-color: #ffe6e6 !important;
+}
+
+#noData {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-size: 1.1rem;
+  display: none;
+}
+
+/* 删除按钮 */
+.delete-row-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.delete-row-btn:hover {
+  background: #e55a5a;
+}
+
+/* ========== 手动添加表单 ========== */
+.add-form {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.add-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+#addRecordForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+#addRecordForm input {
+  padding: 12px;
+  border: 2px solid #e0e7f0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+#addRecordForm input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74,144,226,0.15);
+}
+
+#addRecordForm button {
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  grid-column: span 2;
+}
+
+#addRecordForm button:hover {
+  background-color: #3a7bd5;
+}
+
+/* ========== 响应式适配 ========== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .search-box input {
+    flex: 1 1 200px;
+  }
+  
+  .sort-box, .upload-area {
+    justify-content: center;
+  }
+  
+  #addRecordForm {
+    grid-template-columns: 1fr;
+  }
+  
+  #addRecordForm button {
+    grid-column: span 1;
+  }
+
+  th, td {
+    max-width: 120px;
+    font-size: 0.8rem;
+  }
+}
